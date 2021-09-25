@@ -16,3 +16,19 @@ build:
               manual:
                   - dest: .
                     src: "src/**/*.ts"
+        - image: bala0406/client
+          context: client
+          docker:
+              dockerfile: Dockerfile
+          sync:
+              manual:
+                  - dest: .
+                    src: "**/*.js"
+        - image: bala0406/tickets
+          context: tickets
+          docker:
+              dockerfile: Dockerfile
+          sync:
+              manual:
+                  - dest: .
+                    src: "src/**/*.ts"
